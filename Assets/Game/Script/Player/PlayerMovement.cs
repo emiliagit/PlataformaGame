@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
 
-    public float velocidad = 5f;
+    public float speed = 5f;
+
+    private float runSpeed = 7f;
 
     public float fuerzaSalto = 5f;
    
@@ -13,23 +16,52 @@ public class PlayerMovement : MonoBehaviour
 
     private int saltosRestantes = 2;
 
+    public GameObject Bomba;
+
+    public GameObject Explosion;
+
+    //private Animator playerAnimator;
+
     void Start()
     {
-
+        //playerAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float movimientoHorizontal = Input.GetAxis("Horizontal");
-       
-       
-        Vector3 movimiento = new Vector3(movimientoHorizontal, 0f, 0f) * velocidad * Time.deltaTime;
+        Movimiento();
+    }
 
-        
-        transform.Translate(movimiento);
+    private void Movimiento()
+    {
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
+            //playerAnimator.SetBool("IsWalking", true);
+           
+            transform.localScale = new Vector3(1, 1, 1);
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                transform.Translate(Vector3.right * runSpeed * Time.deltaTime);
+                
+            }
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
+            //playerAnimator.SetBool("IsWalking", true);
+            
+            transform.localScale = new Vector3(-1, 1, 1);
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                transform.Translate(Vector3.left * runSpeed * Time.deltaTime);
+                //playerAnimator.SetBool("IsRunning", true);
+            }
+        }
+       
 
-        if (Input.GetKeyDown(KeyCode.W) && enSuelo)
+        if (Input.GetKeyDown(KeyCode.Space) && enSuelo)
         {
             if (saltosRestantes > 0)
             {
@@ -48,6 +80,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+
+   
 
     void OnCollisionEnter(Collision collision)
     {
