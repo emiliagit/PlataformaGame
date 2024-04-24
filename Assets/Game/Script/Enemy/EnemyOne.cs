@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class EnemyOne : MonoBehaviour
+public class EnemyOne : EnemyPadre
 {
     public float velocidad = 4f; // Velocidad de movimiento
     public float limiteIzquierdo = -4f; // Límite izquierdo
     public float limiteDerecho = 4f; // Límite derecho
     private bool moviendoDerecha = true; // Dirección inicial
+
+    public Slider slider;
 
     void Update()
     {

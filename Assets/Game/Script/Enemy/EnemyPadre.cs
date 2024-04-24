@@ -5,11 +5,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyOneLife : MonoBehaviour
+public abstract class EnemyPadre : MonoBehaviour
 {
-    public Slider healthSlider;
-    //public TextMeshProUGUI hpText;
-    public float hp;
+    protected Slider healthSlider;
+   
+    protected float hp;
 
 
     private void Start()
@@ -35,10 +35,10 @@ public class EnemyOneLife : MonoBehaviour
         
     }
 
-    void UpdateHealthUI()
+    public void UpdateHealthUI()
     {
         hp = Mathf.Clamp(hp, 0, 100);
         healthSlider.value = hp;
-        //hpText.text = "LIfe: " + hp.ToString() + "%";
+       
     }
 }

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Enemy2 : MonoBehaviour
+public class Enemy2 : EnemyPadre
 {
     public Transform player; 
     public float detectionRange = 10f; // Rango de detección del jugador
@@ -11,6 +12,14 @@ public class Enemy2 : MonoBehaviour
     public float fireRate = 1f; // Tasa de disparo (bombas por segundo)
 
     private float nextFireTime; // Tiempo en el que podrá disparar la siguiente bomba
+
+    //public Slider slider;
+
+    private void Start()
+    {
+        hp = 150;
+        UpdateHealthUI();
+    }
 
     void Update()
     {
