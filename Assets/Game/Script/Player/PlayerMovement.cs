@@ -7,66 +7,76 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float speed = 5f;
-
     private float runSpeed = 7f;
 
-    public float fuerzaSalto = 5f;
-   
-    private bool enSuelo;
+    private bool grounded;
 
     private int saltosRestantes = 2;
+    public float fuerzaSalto = 5f;
 
-    public GameObject Bomba;
+    private Rigidbody rb;
+    public float gravityMultiplier;
 
-    public GameObject Explosion;
+    private CapsuleCollider capsuleCollider;
 
-    //private Animator playerAnimator;
+   
 
     void Start()
     {
-        //playerAnimator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         Movimiento();
+        GravityCompensation();
+
+        
     }
 
     private void Movimiento()
     {
+
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
-            //playerAnimator.SetBool("IsWalking", true);
-           
-            transform.localScale = new Vector3(1, 1, 1);
-            if (Input.GetKey(KeyCode.LeftShift))
             {
-                transform.Translate(Vector3.right * runSpeed * Time.deltaTime);
+                transform.Translate(Vector3.right * speed * Time.deltaTime);
                 
+
+                transform.localScale = new Vector3(1, 1, 1);
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    transform.Translate(Vector3.right * runSpeed * Time.deltaTime);
+
+                }
             }
         }
+
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
-            //playerAnimator.SetBool("IsWalking", true);
-            
-            transform.localScale = new Vector3(-1, 1, 1);
-            if (Input.GetKey(KeyCode.LeftShift))
             {
-                transform.Translate(Vector3.left * runSpeed * Time.deltaTime);
-                //playerAnimator.SetBool("IsRunning", true);
+                transform.Translate(Vector3.left * speed * Time.deltaTime);
+               
+
+                transform.localScale = new Vector3(-1, 1, 1);
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    transform.Translate(Vector3.left * runSpeed * Time.deltaTime);
+                    
+                }
             }
         }
-       
 
-        if (Input.GetKeyDown(KeyCode.Space) && enSuelo)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             if (saltosRestantes > 0)
             {
                 // Si está en el suelo o aún hay saltos restantes
-                if (enSuelo || saltosRestantes == 2)
+                if (grounded || saltosRestantes == 2)
                 {
                     // Aplicar fuerza de salto
                     GetComponent<Rigidbody>().AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
@@ -74,8 +84,8 @@ public class PlayerMovement : MonoBehaviour
                     saltosRestantes--;
 
                     // Si no estaba en el suelo, ya no puede realizar otro salto hasta que toque el suelo nuevamente
-                    if (!enSuelo)
-                        enSuelo = false;
+                    if (!grounded)
+                        grounded = false;
                 }
             }
         }
@@ -89,7 +99,14 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Suelo"))
         {
             saltosRestantes = 2;
-            enSuelo = true;
+            grounded = true;
         }
+    }
+
+
+    private void GravityCompensation()
+    {
+        if (!grounded)
+            rb.AddForce(Vector3.down * gravityMultiplier, ForceMode.Force);
     }
 }

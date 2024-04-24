@@ -11,6 +11,11 @@ public class EnemyOne : MonoBehaviour
 
     void Update()
     {
+        EnemyMovement();
+    }
+
+    private void EnemyMovement()
+    {
         // Mueve el objeto hacia la derecha o la izquierda según la dirección actual
         if (moviendoDerecha)
         {

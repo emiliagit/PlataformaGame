@@ -19,7 +19,7 @@ public class Ataque : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1) && Time.time >= nextAttackTime)
+        if (Input.GetMouseButtonDown(0) && Time.time >= nextAttackTime)
         {
             Shoot();
             nextAttackTime = Time.time + 1f / attackSpeed;
