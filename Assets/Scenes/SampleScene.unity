@@ -147,12 +147,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234005036}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.52000046, y: -0.1000092, z: -0.026128769}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.068, y: -0.076, z: 0.004}
+  m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1151092398}
+  m_Father: {fileID: 267896560}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &267896549
 PrefabInstance:
@@ -166,6 +166,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: hero-attack-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839014605213348937, guid: 4ad869c83c6ef66408670b4277c7dad9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6962693338349013971, guid: 4ad869c83c6ef66408670b4277c7dad9,
         type: 3}
@@ -234,7 +239,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6962693338349013971, guid: 4ad869c83c6ef66408670b4277c7dad9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 234005037}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5839014605213348937, guid: 4ad869c83c6ef66408670b4277c7dad9,
         type: 3}
@@ -248,6 +257,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 267896557}
+    - targetCorrespondingSourceObject: {fileID: 5839014605213348937, guid: 4ad869c83c6ef66408670b4277c7dad9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 267896561}
   m_SourcePrefab: {fileID: 100100000, guid: 4ad869c83c6ef66408670b4277c7dad9, type: 3}
 --- !u!1 &267896550 stripped
 GameObject:
@@ -325,6 +338,29 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 267896549}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &267896560 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6962693338349013971, guid: 4ad869c83c6ef66408670b4277c7dad9,
+    type: 3}
+  m_PrefabInstance: {fileID: 267896549}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &267896561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267896550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0b2ef70b09abcf4c83d614e05fbd04a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BombPrefab: {fileID: 1239637432}
+  BombSpawnPoint: {fileID: 234005037}
+  BombSpeed: 13
+  attackSpeed: 2
+  animator: {fileID: 267896558}
 --- !u!1 &292050472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,7 +1318,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 650027550}
-  - {fileID: 234005037}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1151092399
@@ -1346,6 +1381,7 @@ MonoBehaviour:
   BombSpawnPoint: {fileID: 234005037}
   BombSpeed: 13
   attackSpeed: 2
+  animator: {fileID: 0}
 --- !u!1 &1239637432
 GameObject:
   m_ObjectHideFlags: 0
