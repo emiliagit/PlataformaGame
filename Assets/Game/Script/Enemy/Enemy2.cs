@@ -23,6 +23,8 @@ public class Enemy2 : EnemyPadre
 
     void Update()
     {
+
+
         // Calculamos la distancia entre el enemigo y el jugador
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 

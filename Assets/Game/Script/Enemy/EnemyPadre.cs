@@ -7,22 +7,20 @@ using UnityEngine.UI;
 
 public abstract class EnemyPadre : MonoBehaviour
 {
-    protected Slider healthSlider;
+    [SerializeField] Slider healthSlider;
    
     protected float hp;
 
 
     private void Start()
     {
-        hp = 100;
-        UpdateHealthUI();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateHealthUI();
-        RecibirDanio();
+
     }
 
     public void RecibirDanio()

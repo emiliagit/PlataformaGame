@@ -10,11 +10,20 @@ public class EnemyOne : EnemyPadre
     public float limiteDerecho = 4f; // Límite derecho
     private bool moviendoDerecha = true; // Dirección inicial
 
-    public Slider slider;
+    //public Slider slider;
 
+
+    private void Start()
+    {
+        hp = 100;
+        //UpdateHealthUI();
+    }
     void Update()
     {
         EnemyMovement();
+
+        UpdateHealthUI();
+        RecibirDanio();
     }
 
     private void EnemyMovement()
