@@ -270,6 +270,7 @@ MonoBehaviour:
   speed: 5
   fuerzaSalto: 5
   gravityMultiplier: 0
+  animator: {fileID: 267896558}
 --- !u!54 &267896556
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -318,6 +319,12 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.35167313, y: 0.47082078, z: 0.19434404}
   m_Center: {x: -0.0702467, y: -0.099060595, z: 0.013043642}
+--- !u!95 &267896558 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6340189842642821934, guid: 4ad869c83c6ef66408670b4277c7dad9,
+    type: 3}
+  m_PrefabInstance: {fileID: 267896549}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &292050472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,6 +1194,7 @@ MonoBehaviour:
   speed: 5
   fuerzaSalto: 7
   gravityMultiplier: 5
+  animator: {fileID: 0}
 --- !u!136 &1151092395
 CapsuleCollider:
   m_ObjectHideFlags: 0

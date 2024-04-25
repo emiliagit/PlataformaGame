@@ -10,28 +10,38 @@ public class Ataque : MonoBehaviour
     public float attackSpeed = 2f;
     private float nextAttackTime = 0f;
 
-    //private Animator PlayerAnimator;
+    public Animator animator;
 
+    
     private void Start()
     {
-        //PlayerAnimator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && Time.time >= nextAttackTime)
+        Attack();
+    }
+
+    private void Attack() 
+    {
+       
+        if (Input.GetMouseButtonDown(1) && Time.time >= nextAttackTime)
         {
             Shoot();
             nextAttackTime = Time.time + 1f / attackSpeed;
 
         }
-    }
 
-    private void Attack() 
-    {
-        if(Input.GetMouseButtonDown (0)) 
+        if (Input.GetMouseButtonDown(0))
         {
-            //PlayerAnimator.SetBool("IsAttacking", true);
+            animator.SetBool("IsAttacking", true);
+           
+
+        }
+        else
+        {
+            animator.SetBool("IsAttacking", false);
         }
     }
 
