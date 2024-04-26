@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        {
+        
             if (movement != Vector3.zero)
             {
                 animator.SetBool("ISmooving", true);
@@ -92,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 animator.SetBool("ISmooving", false);
             }
-        }
+        
 
         
 

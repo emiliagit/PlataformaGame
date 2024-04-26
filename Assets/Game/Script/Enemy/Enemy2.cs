@@ -1,60 +1,70 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Enemy2 : EnemyPadre
 {
-    public Transform player; 
-    public float detectionRange = 10f; // Rango de detección del jugador
-    public GameObject bombPrefab; 
-    public float bombForce = 10f; 
-    public float fireRate = 1f; // Tasa de disparo (bombas por segundo)
+    public float detectionRadius = 10f; // Radio de detección del jugador
+    public float moveSpeed = 0.5f; // Velocidad de movimiento del enemigo
+    
+    private Transform player; // Referencia al transform del jugador
+    private bool playerDetected = false; // Variable para controlar si el jugador ha sido detectado
+    private Vector3 targetPosition;
 
-    private float nextFireTime; // Tiempo en el que podrá disparar la siguiente bomba
+    public Animator enemyAnimator;
 
-    //public Slider slider;
+    private Rigidbody rb;
+
+    
 
     private void Start()
     {
-        hp = 150;
-        UpdateHealthUI();
+        rb = GetComponent<Rigidbody>();
+
+        player = GameObject.FindGameObjectWithTag("Player").transform; // Busca el transform del jugador
     }
 
-    void Update()
+    private void Update()
     {
+        MovEnemy();
+    }
 
-
-        // Calculamos la distancia entre el enemigo y el jugador
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-        // Si el jugador está dentro del rango de detección y ha pasado el tiempo suficiente desde el último disparo
-        if (distanceToPlayer <= detectionRange && Time.time >= nextFireTime)
+    private void MovEnemy()
+    {
+        if (!playerDetected)
         {
-          
-            Shoot();
+            // Comprueba si el jugador está dentro del radio de detección
+            if (Vector3.Distance(transform.position, player.position) <= detectionRadius)
+            {
+                Debug.Log("player detectado");
+                playerDetected = true; // Marca al jugador como detectado
+                targetPosition = player.position; // Establece la posición del jugador como destino
+            }
+            
+        }
+        else
+        {
+            // Calcula la dirección hacia la que mirar
+            Vector3 direction = (targetPosition - transform.position).normalized;
 
-            // Actualizamos el tiempo en el que podrá disparar la siguiente bomba
-            nextFireTime = Time.time + 1f / fireRate;
+            // Calcula la rotación hacia la dirección del movimiento
+            //transform.LookAt(player.position);
+
+            Quaternion newRotation = Quaternion.Euler(0f, 180f, 0f);
+            rb.MoveRotation(newRotation);
+
+            // Mueve al enemigo hacia la posición del jugador
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
         }
     }
 
-    void Shoot()
-    {
-       
-        GameObject bomb = Instantiate(bombPrefab, transform.position, Quaternion.identity);
 
-        // Calculamos la dirección hacia la que lanzaremos la bomba (hacia el jugador)
-        Vector3 shootDirection = (player.position - transform.position).normalized;
 
-        // Aplicamos fuerza a la bomba en la dirección calculada
-        bomb.GetComponent<Rigidbody>().AddForce(shootDirection * bombForce, ForceMode.Impulse);
-    }
 
-    void OnDrawGizmosSelected()
-    {
-        // Dibujamos un gizmo en la escena para representar el rango de detección del enemigo
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, detectionRange);
-    }
+
+
+
 }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public abstract class EnemyPadre : MonoBehaviour
 {
-    [SerializeField] Slider healthSlider;
+    //[SerializeField] Slider healthSlider;
    
     protected float hp;
 
@@ -36,7 +36,7 @@ public abstract class EnemyPadre : MonoBehaviour
     public void UpdateHealthUI()
     {
         hp = Mathf.Clamp(hp, 0, 100);
-        healthSlider.value = hp;
+        //healthSlider.value = hp;
        
     }
 }
