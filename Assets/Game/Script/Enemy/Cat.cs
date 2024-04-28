@@ -21,7 +21,7 @@ public class Cat : EnemyPadre
 
     private void Start()
     {
-        hp = 100;
+        hp = 50;
 
         rb = GetComponent<Rigidbody>();
 
@@ -33,6 +33,14 @@ public class Cat : EnemyPadre
         RecibirDanio();
 
         EnemyMovement();
+
+        if (hp <= 0)
+        {
+            healthSlider.gameObject.SetActive(false);
+            catAnimator.SetBool("enemyDeath", true);
+
+            Destroy(gameObject, 1f);
+        }
 
     }
 

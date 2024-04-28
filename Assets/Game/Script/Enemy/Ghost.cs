@@ -21,6 +21,14 @@ public class Ghost : EnemyPadre
 
         UpdateHealthUI();
         RecibirDanio();
+
+        if (hp <= 0)
+        {
+            healthSlider.gameObject.SetActive(false);
+            ghostAnimator.SetBool("enemyDeath", true);
+
+            Destroy(gameObject, 1f);
+        }
     }
 
     private void GhostMovement()

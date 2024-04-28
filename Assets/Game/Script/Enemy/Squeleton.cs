@@ -13,14 +13,14 @@ public class Squeleton : EnemyPadre
     private bool playerDetected = false; // Variable para controlar si el jugador ha sido detectado
     private Vector3 targetPosition;
 
-    public Animator enemyAnimator;
-
     private Rigidbody rb;
 
     
 
     private void Start()
     {
+
+        hp = 150;
         rb = GetComponent<Rigidbody>();
 
         player = GameObject.FindGameObjectWithTag("Player").transform; // Busca el transform del jugador
@@ -28,7 +28,19 @@ public class Squeleton : EnemyPadre
 
     private void Update()
     {
+
+        UpdateHealthUI();
+        RecibirDanio();
+
         MovEnemy();
+
+        if (hp <= 0)
+        {
+            healthSlider.gameObject.SetActive(false);
+            squeletonAnimator.SetBool("enemyDeath", true);
+
+            Destroy(gameObject, 1f);
+        }
     }
 
     private void MovEnemy()

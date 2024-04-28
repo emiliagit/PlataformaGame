@@ -5,14 +5,16 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public abstract class EnemyPadre : MonoBehaviour
 {
-    [SerializeField] Slider healthSlider;
+    public Slider healthSlider;
    
     protected float hp;
 
-    [SerializeField] private GameObject deathEnemy;
-    [SerializeField] private Animator deathAnimator;
+    public Animator ghostAnimator;
+    public Animator catAnimator;
+    public Animator squeletonAnimator;
 
 
     private void Start()
@@ -33,14 +35,8 @@ public abstract class EnemyPadre : MonoBehaviour
             hp -= 10;
             UpdateHealthUI();
         }
-        if(hp <= 0)
-        {
-            //GameObject death = Instantiate(deathEnemy, transform.position, Quaternion.identity);
-            deathAnimator.SetBool("enemyDeath", true);
-            //Destroy(death, 1f);
-            Destroy(gameObject);
-        }
-       
+        
+
 
     }
 
