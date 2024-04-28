@@ -55,9 +55,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        if (Input.GetKeyDown(KeyCode.W) && grounded)
         {
-            animator.SetBool("ISjumping", true);
+            //animator.SetBool("ISjumping", true);
             if (saltosRestantes > 0)
             {
 
@@ -79,12 +79,12 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            animator.SetBool("ISjumping", false);
+            //animator.SetBool("ISjumping", false);
         }
 
 
-        
-            if (movement != Vector3.zero)
+
+        if (movement != Vector3.zero)
             {
                 animator.SetBool("ISmooving", true);
             }
