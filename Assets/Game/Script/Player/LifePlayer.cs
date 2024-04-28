@@ -11,9 +11,6 @@ public class LifePlayer : MonoBehaviour
     private int maxHealth = 4;
     private int currentHealth;
 
-
-
-
     private void Start()
     {
         currentHealth = maxHealth;

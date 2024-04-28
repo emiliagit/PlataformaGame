@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
-            //animator.SetBool("ISjumping", true);
+            animator.SetBool("ISjumping", true);
 
             if (saltosRestantes > 0)
             {
@@ -76,10 +76,10 @@ public class PlayerMovement : MonoBehaviour
             }
             
         }
-        //else
-        //{
-        //    animator.SetBool("ISjumping", false);
-        //}
+        else
+        {
+            animator.SetBool("ISjumping", false);
+        }
 
 
 

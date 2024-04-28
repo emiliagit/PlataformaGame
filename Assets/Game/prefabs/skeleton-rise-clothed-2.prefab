@@ -13,11 +13,10 @@ GameObject:
   - component: {fileID: 2852761831857775910}
   - component: {fileID: 8184535946809330403}
   - component: {fileID: 6627146713760443618}
-  - component: {fileID: 4980993206398578072}
   - component: {fileID: 4228225016363353933}
   m_Layer: 0
   m_Name: skeleton-rise-clothed-2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.6619971, y: 1.5894322, z: 10.676441}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -138,29 +137,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8651139588038724118}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25d48ed3b96afcd42acd6c3ddf7e2753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthSlider: {fileID: 0}
   detectionRadius: 10
   moveSpeed: 0.5
   enemyAnimator: {fileID: 0}
---- !u!114 &4980993206398578072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8651139588038724118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25d48ed3b96afcd42acd6c3ddf7e2753, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectionRadius: 10
-  moveSpeed: 0.5
-  enemyAnimator: {fileID: 2852761831857775910}
 --- !u!54 &4228225016363353933
 Rigidbody:
   m_ObjectHideFlags: 0

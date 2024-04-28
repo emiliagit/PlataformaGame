@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Enemy2 : EnemyPadre
+public class Squeleton : EnemyPadre
 {
     public float detectionRadius = 10f; // Radio de detección del jugador
     public float moveSpeed = 0.5f; // Velocidad de movimiento del enemigo
@@ -49,11 +49,9 @@ public class Enemy2 : EnemyPadre
             // Calcula la dirección hacia la que mirar
             Vector3 direction = (targetPosition - transform.position).normalized;
 
-            // Calcula la rotación hacia la dirección del movimiento
-            //transform.LookAt(player.position);
-
-            Quaternion newRotation = Quaternion.Euler(0f, 180f, 0f);
-            rb.MoveRotation(newRotation);
+          
+            //Quaternion newRotation = Quaternion.Euler(0f, 180f, 0f);
+            //rb.MoveRotation(newRotation);
 
             // Mueve al enemigo hacia la posición del jugador
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);

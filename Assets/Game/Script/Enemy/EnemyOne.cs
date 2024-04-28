@@ -1,53 +1,59 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyOne : EnemyPadre
+public class Cat : EnemyPadre
 {
-    public float speed = 5f; // Velocidad de movimiento
-    public float distance = 5f; // Distancia que cubrirá en cada dirección
+    private Rigidbody rb;
 
-    private Vector3 startPosition;
+    public float detectionRadius = 10f; 
+    
+    private Transform player; 
+    private bool playerDetected = false; 
+
     private Vector3 targetPosition;
-    private bool movingRight = true;
 
-
+    public float velocidad = 2f;
 
 
     private void Start()
     {
         hp = 100;
-        startPosition = transform.position;
-        SetTargetPosition();
+
+        rb = GetComponent<Rigidbody>();
+
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
     void Update()
     {
-        EnemyMovement();
-
         UpdateHealthUI();
         RecibirDanio();
+
+        EnemyMovement();
+
     }
 
     private void EnemyMovement()
     {
-        // Mover el objeto hacia la posición objetivo
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-
-        // Si ha llegado a la posición objetivo, cambiar la dirección y la nueva posición objetivo
-        if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
+        if (!playerDetected)
         {
-            movingRight = !movingRight;
-            SetTargetPosition();
+            // Comprueba si el jugador está dentro del radio de detección
+            if (Vector3.Distance(transform.position, player.position) <= detectionRadius)
+            {
+                Debug.Log("player detectado");
+                playerDetected = true; // Marca al jugador como detectado
+               
+            }
+
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, velocidad * Time.deltaTime);
         }
     }
 
-    void SetTargetPosition()
-    {
-        if (movingRight)
-            targetPosition = startPosition + Vector3.right * distance;
-        else
-            targetPosition = startPosition - Vector3.right * distance;
-    }
+   
 }

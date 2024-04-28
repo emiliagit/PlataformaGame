@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 3731556538994972231}
   - component: {fileID: 6287480301091509271}
   - component: {fileID: 889375428179524382}
+  - component: {fileID: 5235783185684399251}
+  - component: {fileID: 566072469034910146}
   m_Layer: 0
   m_Name: hero-attack-1
   m_TagString: Player
@@ -188,3 +190,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSpeed: 2
   animator: {fileID: 6340189842642821934}
+--- !u!114 &5235783185684399251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5839014605213348937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fa3e7d913bfc7e42a2d4f3f4dff2331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearts: []
+--- !u!114 &566072469034910146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5839014605213348937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 758cbf37ac069a145ab9a0edd9025009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
