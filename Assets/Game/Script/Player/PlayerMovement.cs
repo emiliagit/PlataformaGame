@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -18,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider boxCollider;
 
     public Animator animator;
+
+  
 
    
 
@@ -104,14 +107,9 @@ public class PlayerMovement : MonoBehaviour
             saltosRestantes = 2;
             grounded = true;
         }
+       
     }
 
-
-    //private void GravityCompensation()
-    //{
-    //    if (!grounded)
-    //        rb.AddForce(Vector3.down * gravityMultiplier, ForceMode.Force);
-    //}
-
+   
 
 }

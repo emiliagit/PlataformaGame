@@ -22,7 +22,7 @@ public class Ghost : EnemyPadre
         GhostMovement();
 
         UpdateHealthUI();
-        RecibirDanio();
+        //RecibirDanio();
 
         if (hp <= 0)
         {
@@ -47,4 +47,14 @@ public class Ghost : EnemyPadre
         }
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            RecibirDanio();
+        }
+    }
+
+   
 }

@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 6287480301091509271}
   - component: {fileID: 889375428179524382}
   - component: {fileID: 5235783185684399251}
-  - component: {fileID: 566072469034910146}
   m_Layer: 0
   m_Name: hero-attack-1
   m_TagString: Player
@@ -126,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   fuerzaSalto: 5
-  gravityMultiplier: 0
+  gravityMultiplier: 2
   animator: {fileID: 6340189842642821934}
 --- !u!54 &3731556538994972231
 Rigidbody:
@@ -150,10 +149,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &6287480301091509271
 BoxCollider:
@@ -174,8 +173,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.35167313, y: 0.43354508, z: 0.19434404}
-  m_Center: {x: -0.0702467, y: -0.080422744, z: 0.013043642}
+  m_Size: {x: 0.35167313, y: 0.40034294, z: 0.19434404}
+  m_Center: {x: -0.0702467, y: -0.09702393, z: 0.013043642}
 --- !u!114 &889375428179524382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,17 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa3e7d913bfc7e42a2d4f3f4dff2331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hearts: []
---- !u!114 &566072469034910146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5839014605213348937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 758cbf37ac069a145ab9a0edd9025009, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

@@ -21,7 +21,7 @@ public class Squeleton : EnemyPadre
     private void Start()
     {
 
-        hp = 150;
+        hp = 100;
         rb = GetComponent<Rigidbody>();
 
         player = GameObject.FindGameObjectWithTag("Player").transform; // Busca el transform del jugador
@@ -31,7 +31,7 @@ public class Squeleton : EnemyPadre
     {
 
         UpdateHealthUI();
-        RecibirDanio();
+        //RecibirDanio();
 
         MovEnemy();
 
@@ -59,15 +59,25 @@ public class Squeleton : EnemyPadre
         }
         else
         {
-            // Calcula la dirección hacia la que mirar
-            Vector3 direction = (targetPosition - transform.position).normalized;
+            if(hp > 0 )
+            {
+                squeletonAnimator.SetBool("squeletonMooving", true);
+                // Calcula la dirección hacia la que mirar
+                Vector3 direction = (targetPosition - transform.position).normalized;
 
-          
-            //Quaternion newRotation = Quaternion.Euler(0f, 180f, 0f);
-            //rb.MoveRotation(newRotation);
 
-            // Mueve al enemigo hacia la posición del jugador
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+                //Quaternion newRotation = Quaternion.Euler(0f, 180f, 0f);
+                //rb.MoveRotation(newRotation);
+
+                // Mueve al enemigo hacia la posición del jugador
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            }
+            else
+            {
+                squeletonAnimator.SetBool("squeletonMooving", false);
+
+            }
+
 
         }
     }

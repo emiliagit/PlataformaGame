@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,7 +33,7 @@ public class Cat : EnemyPadre
     void Update()
     {
         UpdateHealthUI();
-        RecibirDanio();
+        //RecibirDanio();
 
         EnemyMovement();
 
@@ -61,8 +62,19 @@ public class Cat : EnemyPadre
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, velocidad * Time.deltaTime);
+            if (hp > 0) 
+            {
+                catAnimator.SetBool("catMooving", true);
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, velocidad * Time.deltaTime);
+
+            }
+            else
+            {
+                catAnimator.SetBool("catMooving", false);
+
+            }
         }
+        
     }
 
    
