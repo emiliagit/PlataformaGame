@@ -15,7 +15,8 @@ public class Squeleton : EnemyPadre
 
     private Rigidbody rb;
 
-    
+    public Animator squeletonAnimator;
+
 
     private void Start()
     {

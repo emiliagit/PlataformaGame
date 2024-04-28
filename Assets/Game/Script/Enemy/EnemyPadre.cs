@@ -12,11 +12,6 @@ public abstract class EnemyPadre : MonoBehaviour
    
     protected float hp;
 
-    public Animator ghostAnimator;
-    public Animator catAnimator;
-    public Animator squeletonAnimator;
-
-
     private void Start()
     {
        

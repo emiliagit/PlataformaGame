@@ -18,6 +18,8 @@ public class Cat : EnemyPadre
 
     public float velocidad = 2f;
 
+    public Animator catAnimator;
+
 
     private void Start()
     {
