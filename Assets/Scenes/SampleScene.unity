@@ -354,7 +354,7 @@ PrefabInstance:
     - target: {fileID: 3731556538994972231, guid: 4ad869c83c6ef66408670b4277c7dad9,
         type: 3}
       propertyPath: m_Constraints
-      value: 16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5839014605213348937, guid: 4ad869c83c6ef66408670b4277c7dad9,
         type: 3}
@@ -1117,7 +1117,7 @@ GameObject:
   - component: {fileID: 1138394546}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

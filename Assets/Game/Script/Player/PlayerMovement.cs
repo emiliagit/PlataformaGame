@@ -17,8 +17,6 @@ public class PlayerMovement : MonoBehaviour
 
     private BoxCollider boxCollider;
 
-    //private bool isMooving = false;
-
     public Animator animator;
 
    
@@ -35,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Movimiento();
-        GravityCompensation();
+        //GravityCompensation();
 
         
     }
@@ -55,9 +53,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.W) && grounded)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
-            animator.SetBool("ISjumping", true);
+            //animator.SetBool("ISjumping", true);
+
             if (saltosRestantes > 0)
             {
 
@@ -77,10 +76,10 @@ public class PlayerMovement : MonoBehaviour
             }
             
         }
-        else
-        {
-            animator.SetBool("ISjumping", false);
-        }
+        //else
+        //{
+        //    animator.SetBool("ISjumping", false);
+        //}
 
 
 
@@ -93,10 +92,6 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("ISmooving", false);
             }
         
-
-        
-
-
     }
 
    
@@ -112,43 +107,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    private void GravityCompensation()
-    {
-        if (!grounded)
-            rb.AddForce(Vector3.down * gravityMultiplier, ForceMode.Force);
-    }
-
-
-
-
-
-    //if (Input.GetKey(KeyCode.D))
+    //private void GravityCompensation()
     //{
-    //    {
-    //        transform.Translate(Vector3.right * speed * Time.deltaTime);
-
-
-    //        transform.localScale = new Vector3(1, 1, 1);
-    //        if (Input.GetKey(KeyCode.LeftShift))
-    //        {
-    //            transform.Translate(Vector3.right * runSpeed * Time.deltaTime);
-
-    //        }
-    //    }
+    //    if (!grounded)
+    //        rb.AddForce(Vector3.down * gravityMultiplier, ForceMode.Force);
     //}
 
-    //if (Input.GetKey(KeyCode.A))
-    //{
-    //    {
-    //        transform.Translate(Vector3.left * speed * Time.deltaTime);
 
-
-    //        transform.localScale = new Vector3(-1, 1, 1);
-    //        if (Input.GetKey(KeyCode.LeftShift))
-    //        {
-    //            transform.Translate(Vector3.left * runSpeed * Time.deltaTime);
-
-    //        }
-    //    }
-    //}
 }
