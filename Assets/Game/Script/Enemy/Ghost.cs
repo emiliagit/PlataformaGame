@@ -48,13 +48,7 @@ public class Ghost : EnemyPadre
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            RecibirDanio();
-        }
-    }
+    
 
    
 }

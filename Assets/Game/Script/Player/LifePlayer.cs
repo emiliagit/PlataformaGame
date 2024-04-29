@@ -11,24 +11,24 @@ public class LifePlayer : MonoBehaviour
     private int maxHealth = 4;
     private int currentHealth;
 
+    private Ataque attack;
+
     private void Start()
     {
         currentHealth = maxHealth;
         UpdateLife(currentHealth);
+
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Método para que el jugador reciba daño
     public void TakeDamage(int daño)
     {
-
-
         if (currentHealth > 0)
         {
             currentHealth--;
             UpdateLife(currentHealth);
         }
-
 
         if (currentHealth <= 0)
         {
@@ -50,4 +50,6 @@ public class LifePlayer : MonoBehaviour
         }
 
     }
+
+    
 }

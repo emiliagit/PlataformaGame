@@ -13,11 +13,11 @@ public abstract class EnemyPadre : MonoBehaviour
    
     protected float hp;
 
-    private LifePlayer player;
+    public Transform player;
 
     private void Start()
     {
-       
+      
     }
 
     // Update is called once per frame
@@ -44,9 +44,17 @@ public abstract class EnemyPadre : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+       
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
         {
-            player.TakeDamage(10);
+            Debug.Log("Colision con player");
+            collision.gameObject.GetComponent<LifePlayer>().TakeDamage(1);
         }
     }
+
+
 }

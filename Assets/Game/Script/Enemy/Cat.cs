@@ -12,7 +12,7 @@ public class Cat : EnemyPadre
 
     public float detectionRadius = 10f; 
     
-    private Transform player; 
+    //private Transform player; 
     private bool playerDetected = false; 
 
     private Vector3 targetPosition;

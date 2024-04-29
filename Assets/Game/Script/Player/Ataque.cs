@@ -4,30 +4,28 @@ using UnityEngine;
 
 public class Ataque : MonoBehaviour
 {
-    public float attackSpeed = 2f;
+   
    
     public Animator animator;
 
-    
+    [SerializeField] private Transform controladorGolpe;
+    [SerializeField] private float radioGolpe;
+   
     private void Start()
     {
         animator = GetComponent<Animator>();
+        
     }
 
     private void Update()
     {
-        Attack();
-    }
-
-    private void Attack() 
-    {
-       
+        
 
         if (Input.GetMouseButtonDown(0))
         {
+            Attack();
             animator.SetBool("IsAttacking", true);
-           
-
+            
         }
         else
         {
@@ -35,5 +33,24 @@ public class Ataque : MonoBehaviour
         }
     }
 
-   
+    private void Attack() 
+    {
+        Collider[] objetos = Physics.OverlapSphere(controladorGolpe.position, radioGolpe);
+
+        foreach (Collider colisionador in objetos)
+        {
+            if (colisionador.CompareTag("Enemy"))
+            {
+                colisionador.transform.GetComponent<EnemyPadre>().RecibirDanio();
+            }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(controladorGolpe.position, radioGolpe);
+    }
+
+
 }

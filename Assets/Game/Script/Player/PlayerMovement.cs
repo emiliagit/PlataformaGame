@@ -36,9 +36,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Movimiento();
-        //GravityCompensation();
-
-        
+       
     }
 
     private void Movimiento()
