@@ -20,10 +20,6 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
 
-  
-
-   
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -104,6 +100,11 @@ public class PlayerMovement : MonoBehaviour
         {
             saltosRestantes = 2;
             grounded = true;
+        }
+        if(collision.gameObject.CompareTag("Gema"))
+        {
+            collision.gameObject.GetComponent<ContadorGemas>().UpdateGemsCountText();
+            Destroy(collision.gameObject);
         }
        
     }
