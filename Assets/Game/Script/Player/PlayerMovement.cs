@@ -107,8 +107,10 @@ public class PlayerMovement : MonoBehaviour
 
             Destroy(collision.gameObject);
         }
-        if(collision.gameObject.CompareTag("Victoria"))
+        if(collision.gameObject.CompareTag("Finish"))
         {
+           
+            Destroy(collision.gameObject);
             Debug.Log("Victoria");
         }
        
