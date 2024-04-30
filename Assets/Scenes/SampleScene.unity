@@ -174,12 +174,12 @@ PrefabInstance:
     - target: {fileID: 6962693338349013971, guid: 4ad869c83c6ef66408670b4277c7dad9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 74.5
+      value: 76.6
       objectReference: {fileID: 0}
     - target: {fileID: 6962693338349013971, guid: 4ad869c83c6ef66408670b4277c7dad9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.629
+      value: 7.603
       objectReference: {fileID: 0}
     - target: {fileID: 6962693338349013971, guid: 4ad869c83c6ef66408670b4277c7dad9,
         type: 3}
@@ -544,7 +544,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 887579980}
   objectToSpawn: {fileID: 1013917086529220, guid: d10cbe6b249ddc34db2eae14d2ae9f3d,
     type: 3}
-  Contador: {fileID: 1492671446}
+  Contador: {fileID: 0}
 --- !u!4 &267333649
 Transform:
   m_ObjectHideFlags: 0
@@ -572,7 +572,6 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
-  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -619,11 +618,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 40
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -648,11 +647,10 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.11, y: 7.24, z: -10}
+  m_LocalPosition: {x: 5.11, y: 6.737, z: -20.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1172770037}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &330585547
@@ -699,45 +697,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!114 &330585548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ExcludedPropertiesInInspector:
-  - m_Script
-  m_LockStageInInspector: 
-  m_StreamingVersion: 20170927
-  m_Priority: 10
-  m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
-  m_Lens:
-    FieldOfView: 40
-    OrthographicSize: 10
-    NearClipPlane: 0.1
-    FarClipPlane: 5000
-    Dutch: 0
-    ModeOverride: 0
-    LensShift: {x: 0, y: 0}
-    GateFit: 2
-    FocusDistance: 10
-    m_SensorSize: {x: 1, y: 1}
-  m_Transitions:
-    m_BlendHint: 0
-    m_InheritPosition: 0
-    m_OnCameraLive:
-      m_PersistentCalls:
-        m_Calls: []
-  m_LegacyBlendHint: 0
-  m_ComponentOwner: {fileID: 1172770037}
 --- !u!1 &340047235
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,7 +1796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1006770114
 Transform:
   m_ObjectHideFlags: 0
@@ -2172,50 +2131,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 831106172}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1172770036
-GameObject:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1172770037}
-  - component: {fileID: 1172770038}
-  m_Layer: 0
-  m_Name: cm
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1172770037
-Transform:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1172770036}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.2, y: -1, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 330585546}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1172770038
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1172770036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1213719402
 GameObject:
   m_ObjectHideFlags: 0
@@ -3543,7 +3458,6 @@ GameObject:
   - component: {fileID: 1492671444}
   - component: {fileID: 1492671443}
   - component: {fileID: 1492671442}
-  - component: {fileID: 1492671446}
   m_Layer: 5
   m_Name: player canvas
   m_TagString: Untagged
@@ -3638,19 +3552,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1492671446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492671441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 628f02205cab8384e8a0844a14d1f931, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gemasCount: {fileID: 1221699524}
 --- !u!1 &1496749723
 GameObject:
   m_ObjectHideFlags: 0
@@ -4181,6 +4082,7 @@ GameObject:
   - component: {fileID: 1621668917}
   - component: {fileID: 1621668916}
   - component: {fileID: 1621668915}
+  - component: {fileID: 1621668919}
   m_Layer: 0
   m_Name: GEM 1 - BLUE - 0000
   m_TagString: Gema
@@ -4297,6 +4199,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1621668919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621668914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 628f02205cab8384e8a0844a14d1f931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemasCount: {fileID: 1221699524}
 --- !u!1 &1651369770
 GameObject:
   m_ObjectHideFlags: 0

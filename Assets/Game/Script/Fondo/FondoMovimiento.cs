@@ -9,17 +9,31 @@ public class FondoMovimiento : MonoBehaviour
 
     private Vector2 offset;
 
-    private Renderer rend;
+    private Material material;
+
+    private Transform playerTransform;
+
+
 
     private void Awake()
     {
-        rend = GetComponent<Renderer>();
+        material = GetComponent<SpriteRenderer>().material;
+
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+
+        playerTransform = playerObject.transform;
+        Debug.Log("Player found");
+    }
+
+    private void Start()
+    {
+        
     }
 
     private void Update()
     {
-        offset = velocidadMovimiento * Time.deltaTime;
-        rend.material.mainTextureOffset += offset;
+        offset = (playerTransform.position.x * 0.1f) * velocidadMovimiento * Time.deltaTime;
+        material.mainTextureOffset += offset;
     }
 
 
