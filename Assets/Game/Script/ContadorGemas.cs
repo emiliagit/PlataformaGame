@@ -6,7 +6,7 @@ using UnityEngine;
 public class ContadorGemas : MonoBehaviour
 {
     public TextMeshProUGUI gemasCount;
-    public string gemasTag = "Gemas";
+    private string gemasTag = "Gema";
     private void Start()
     {
         GetTotalGems();
