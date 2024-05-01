@@ -12,7 +12,7 @@ public class Gema : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
           particle.Play();
-            Destroy(gameObject/*, destroyDelay*/);
+            Destroy(gameObject);
         }
     }
 
