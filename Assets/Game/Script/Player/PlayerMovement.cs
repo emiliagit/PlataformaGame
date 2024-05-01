@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float speed = 5f;
-   
+
     private bool grounded;
     private int saltosRestantes = 2;
     public float fuerzaSalto = 5f;
@@ -32,14 +32,14 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
 
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         Movimiento();
-       
+
     }
 
     private void Movimiento()
@@ -75,10 +75,10 @@ public class PlayerMovement : MonoBehaviour
                     // Si no estaba en el suelo, ya no puede realizar otro salto hasta que toque el suelo nuevamente
                     if (!grounded)
                         grounded = false;
-                    
+
                 }
             }
-            
+
         }
         else
         {
@@ -88,24 +88,17 @@ public class PlayerMovement : MonoBehaviour
 
 
         if (movement != Vector3.zero)
-            {
-                animator.SetBool("ISmooving", true);
-            }
-            else
-            {
-                animator.SetBool("ISmooving", false);
-            }
-        
+        {
+            animator.SetBool("ISmooving", true);
+        }
+        else
+        {
+            animator.SetBool("ISmooving", false);
+        }
+
     }
 
 
-    //private void Particles()
-    //{
-    //    Vector3 vel = rb.velocity;
-
-    //    if (grounded && Mathf.Abs(vel.x) == maxSpeed)
-    //        stepParticles.Play();
-    //}
 
     void OnCollisionEnter(Collision collision)
     {
@@ -115,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
             saltosRestantes = 2;
             grounded = true;
         }
-        if(collision.gameObject.CompareTag("Gema"))
+        if (collision.gameObject.CompareTag("Gema"))
         {
 
             Destroy(collision.gameObject);
@@ -129,8 +122,13 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
+        if (collision.gameObject.CompareTag("Plano"))
+        {
+            Debug.Log("colision plano");
+            SceneManager.LoadScene("GameOver");
+        }
 
     }
 
 
-    }
+}

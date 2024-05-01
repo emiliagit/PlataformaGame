@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.9971957, y: -3.7697601, z: 22.252}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7201814070236192175}
@@ -124,12 +124,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.37, y: 0.65, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.3334475, y: 0.65000004, z: 0.4922638}
+  m_Center: {x: -0.0049838186, y: 0, z: 0.014614105}
 --- !u!114 &6605882963915053819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 3611974501701208101}
+  player: {fileID: 6962693338349013971, guid: 4ad869c83c6ef66408670b4277c7dad9, type: 3}
   ghostAnimator: {fileID: 7827569591574737109}
 --- !u!1 &2930925679510450212
 GameObject:

@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    private LifePlayer player;
+    public GameObject explosionPrefab;
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.CompareTag("Enemy"))
-    //    {
-    //        player.TakeDamage(1);
-    //    }
-    //}
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Gema")) 
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
+            Destroy(explosionPrefab, 1f);
+
+            Destroy(collision.gameObject);
+        }
+    }
+
+
 }

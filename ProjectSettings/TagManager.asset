@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Gema
   - Victoria
+  - Plano
   layers:
   - Default
   - TransparentFX

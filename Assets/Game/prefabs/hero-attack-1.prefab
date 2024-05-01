@@ -127,6 +127,7 @@ MonoBehaviour:
   fuerzaSalto: 5
   gravityMultiplier: 2
   animator: {fileID: 6340189842642821934}
+  Contador: {fileID: 0}
 --- !u!54 &3731556538994972231
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -173,8 +174,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.35167313, y: 0.40034294, z: 0.19434404}
-  m_Center: {x: -0.0702467, y: -0.09702393, z: 0.013043642}
+  m_Size: {x: 0.33067563, y: 0.40034294, z: 0.19434404}
+  m_Center: {x: -0.08074547, y: -0.09702393, z: 0.013043642}
 --- !u!114 &889375428179524382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,8 +188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0b2ef70b09abcf4c83d614e05fbd04a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 2
   animator: {fileID: 6340189842642821934}
+  controladorGolpe: {fileID: 0}
+  radioGolpe: 0
 --- !u!114 &5235783185684399251
 MonoBehaviour:
   m_ObjectHideFlags: 0

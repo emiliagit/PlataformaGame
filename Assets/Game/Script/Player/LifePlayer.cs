@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -32,7 +33,7 @@ public class LifePlayer : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene("GameOverScene");
+            SceneManager.LoadScene("GameOver");
         }
     }
 
@@ -52,4 +53,5 @@ public class LifePlayer : MonoBehaviour
     }
 
     
+
 }
