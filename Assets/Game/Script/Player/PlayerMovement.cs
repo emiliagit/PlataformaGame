@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
@@ -20,7 +21,12 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
 
-    
+    public ContadorGemas Contador;
+
+    //[SerializeField] private ParticleSystem stepParticles;
+
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -92,7 +98,14 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-   
+
+    //private void Particles()
+    //{
+    //    Vector3 vel = rb.velocity;
+
+    //    if (grounded && Mathf.Abs(vel.x) == maxSpeed)
+    //        stepParticles.Play();
+    //}
 
     void OnCollisionEnter(Collision collision)
     {
@@ -107,15 +120,17 @@ public class PlayerMovement : MonoBehaviour
 
             Destroy(collision.gameObject);
         }
-        if(collision.gameObject.CompareTag("Finish"))
+        if (collision.gameObject.CompareTag("Finish"))
         {
-           
-            Destroy(collision.gameObject);
-            Debug.Log("Victoria");
+            if (Contador.GetTotalGems() == 0)
+            {
+                SceneManager.LoadScene("Victory");
+                Destroy(collision.gameObject);
+            }
+
         }
-       
+
     }
 
-   
 
-}
+    }

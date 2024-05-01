@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7687442402745763779}
   - component: {fileID: 7013984162249118221}
   - component: {fileID: 283064964274235508}
-  - component: {fileID: 541939055224271668}
   m_Layer: 0
   m_Name: GEM 1 - BLUE - 0000
   m_TagString: Gema
@@ -30,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 79.34, y: 7.77, z: -0.12}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -129,16 +128,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.72, y: 1.2, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &541939055224271668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7483305714999465650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 628f02205cab8384e8a0844a14d1f931, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gemasCount: {fileID: 0}

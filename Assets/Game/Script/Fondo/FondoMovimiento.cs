@@ -11,7 +11,9 @@ public class FondoMovimiento : MonoBehaviour
 
     private Material material;
 
-    private Transform playerTransform;
+    //private Transform playerTransform;
+
+    private Rigidbody jugadorRB;
 
 
 
@@ -19,10 +21,9 @@ public class FondoMovimiento : MonoBehaviour
     {
         material = GetComponent<SpriteRenderer>().material;
 
-        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-
-        playerTransform = playerObject.transform;
-        Debug.Log("Player found");
+      jugadorRB = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+        //playerTransform = playerObject.transform;
+        //Debug.Log("Player found");
     }
 
     private void Start()
@@ -32,7 +33,7 @@ public class FondoMovimiento : MonoBehaviour
 
     private void Update()
     {
-        offset = (playerTransform.position.x * 0.1f) * velocidadMovimiento * Time.deltaTime;
+        offset = (jugadorRB.velocity * 0.1f) * velocidadMovimiento * Time.deltaTime;
         material.mainTextureOffset += offset;
     }
 
